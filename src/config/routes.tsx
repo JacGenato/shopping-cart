@@ -2,6 +2,7 @@ import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import DashboardLayout from '../layouts/dashboard';
 import Home from '../pages/Home';
+import Profile from '../pages/Profile';
 
 const Router = () => {
   return useRoutes([
@@ -13,6 +14,7 @@ const Router = () => {
           path: '/',
           element: <Home />,
         },
+        { path: 'profile', element: <Profile /> },
       ],
     },
   ]);
