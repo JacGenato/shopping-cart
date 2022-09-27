@@ -11,7 +11,6 @@ import {
   List,
   Box,
 } from '@mui/material';
-import Page from '../components/Page';
 
 const { id, name, role, status, company, avatarUrl, isVerified } = USER;
 
