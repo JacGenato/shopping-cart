@@ -7,9 +7,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { Link } from 'react-router-dom';
 
 import USERLIST from '../__mock__/users';
-import { Avatar, Typography, Stack, Container } from '@mui/material';
+import { Avatar, Typography, Stack, Container, Button } from '@mui/material';
 
 interface Column {
   id: 'name' | 'company' | 'role' | 'isVerified' | 'status';
@@ -31,6 +32,23 @@ const columns: readonly Column[] = [
   },
   { id: 'status', label: 'Status', minWidth: 170 },
 ];
+
+const setData = (data: {
+  id: any;
+  name: any;
+  company: any;
+  status: any;
+  avatarUrl: any;
+  role: any;
+}) => {
+  let { id, name, company, status, avatarUrl, role } = data;
+  localStorage.setItem('ID', id);
+  localStorage.setItem('Name', name);
+  localStorage.setItem('Company', company);
+  localStorage.setItem('Status', status);
+  localStorage.setItem('AvatarUrl', avatarUrl);
+  localStorage.setItem('Role', role);
+};
 
 const rows = USERLIST;
 
@@ -65,6 +83,7 @@ export default function UserList() {
                     {column.label}
                   </TableCell>
                 ))}
+                <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -96,6 +115,11 @@ export default function UserList() {
                           </TableCell>
                         );
                       })}
+                      <TableCell>
+                        <Link to="/edit">
+                          <Button onClick={() => setData(row)}>Update</Button>
+                        </Link>
+                      </TableCell>
                     </TableRow>
                   );
                 })}
