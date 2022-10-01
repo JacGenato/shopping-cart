@@ -1,5 +1,4 @@
-import React from 'react';
-import USER from '../../__mock__/user';
+import React, { useState, useEffect } from 'react';
 
 import {
   Avatar,
@@ -13,9 +12,29 @@ import {
   Box,
 } from '@mui/material';
 
-const { id, name, role, status, company, avatarUrl, isVerified } = USER;
-
 const Details = () => {
+  const [id, setID] = useState('');
+
+  const [name, setName] = useState('');
+  const [company, setCompany] = useState('');
+  const [status, setStatus] = useState('');
+  const [avatarUrl, setAvatar] = useState('');
+  const [role, setRole] = useState('');
+
+  useEffect(() => {
+    setID(JSON.stringify(localStorage.getItem('ID')).replace(/"/g, ''));
+    setName(JSON.stringify(localStorage.getItem('Name')).replace(/"/g, ''));
+    setCompany(
+      JSON.stringify(localStorage.getItem('Company')).replace(/"/g, '')
+    );
+    setStatus(JSON.stringify(localStorage.getItem('Status')).replace(/"/g, ''));
+    setAvatar(
+      JSON.stringify(localStorage.getItem('AvatarUrl')).replace(/"/g, '')
+    );
+    setRole(JSON.stringify(localStorage.getItem('Role')).replace(/"/g, ''));
+    console.log(localStorage.getItem('Role'));
+  }, []);
+
   return (
     <Container>
       <Stack
@@ -25,7 +44,7 @@ const Details = () => {
         mb={5}
       >
         <Typography variant="h4" gutterBottom>
-          Profile
+          Details
         </Typography>
       </Stack>
 
