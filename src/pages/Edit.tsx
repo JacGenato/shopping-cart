@@ -1,9 +1,19 @@
 import * as React from 'react';
 import axios from 'axios';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { FormControlLabel, Checkbox, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
+
+import {
+  Avatar,
+  Typography,
+  Container,
+  Card,
+  Stack,
+  Button,
+  Grid,
+  List,
+  Box,
+} from '@mui/material';
 
 export default function Edit() {
   const [id, setID] = useState('');
@@ -39,59 +49,67 @@ export default function Edit() {
     });
   };
   return (
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <div>
-        <TextField
-          required
-          id="outlined-required"
-          label="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Company"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Status"
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-        />
-      </div>
-      <div>
-        <TextField
-          required
-          id="outlined-required"
-          label="Avatar URL"
-          value={avatarUrl}
-          onChange={(e) => setAvatar(e.target.value)}
-        />
-        <TextField
-          required
-          id="outlined-required"
-          label="Role"
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        />
-      </div>
-      <div>
-        {' '}
-        <Button onClick={updateDate} type="submit">
-          Submit
-        </Button>
-      </div>
-    </Box>
+    <Container>
+      <Box
+        component="form"
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <div>
+          <TextField
+            required
+            id="outlined-required"
+            label="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <TextField
+            required
+            id="outlined-required"
+            label="Company"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+          />
+        </div>
+        <div>
+          <TextField
+            required
+            id="outlined-required"
+            label="Status"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+          />
+        </div>
+        <div>
+          <TextField
+            required
+            id="outlined-required"
+            label="Avatar URL"
+            value={avatarUrl}
+            onChange={(e) => setAvatar(e.target.value)}
+          />{' '}
+        </div>
+        <div>
+          <TextField
+            required
+            id="outlined-required"
+            label="Role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          />
+        </div>
+        <div>
+          {' '}
+          <Button onClick={updateDate} type="submit">
+            Submit
+          </Button>
+        </div>
+      </Box>
+    </Container>
   );
 }
