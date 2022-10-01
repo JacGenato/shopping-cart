@@ -83,7 +83,7 @@ export default function UserList() {
                     {column.label}
                   </TableCell>
                 ))}
-                <TableCell>Actions</TableCell>
+                <TableCell style={{ minWidth: 200 }}>Actions</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -114,8 +114,11 @@ export default function UserList() {
                             </Stack>
                           </TableCell>
                         );
-                      })}
+                      })}{' '}
                       <TableCell>
+                        <Link to="/details">
+                          <Button onClick={() => setData(row)}>Details</Button>
+                        </Link>
                         <Link to="/edit">
                           <Button onClick={() => setData(row)}>Update</Button>
                         </Link>
