@@ -9,7 +9,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { Link } from 'react-router-dom';
 
-import USERLIST from '../__mock__/users';
+import USERLIST from '../../__mock__/users';
 import { Avatar, Typography, Stack, Container, Button } from '@mui/material';
 
 interface Column {

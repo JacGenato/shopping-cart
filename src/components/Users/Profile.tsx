@@ -1,5 +1,5 @@
 import React from 'react';
-import USER from '../__mock__/user';
+import USER from '../../__mock__/user';
 
 import {
   Avatar,

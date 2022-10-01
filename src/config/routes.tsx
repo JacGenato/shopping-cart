@@ -2,10 +2,10 @@ import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import DashboardLayout from '../layouts/dashboard';
 import Home from '../pages/Home';
-import Profile from '../pages/Profile';
-import UserList from '../pages/UserList';
-import Register from '../pages/Register';
-import Edit from '../pages/Edit';
+import Profile from '../components/Users/Profile';
+import UserList from '../components/Users/UserList';
+import Register from '../components/Users/Register';
+import Edit from '../components/Users/Edit';
 
 const Router = () => {
   return useRoutes([
